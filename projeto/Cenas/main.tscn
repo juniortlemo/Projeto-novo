@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dla24wav6k277"]
+
+[ext_resource type="PackedScene" uid="uid://be5yjkrr3tih4" path="res://Cenas/player.tscn" id="1_xmksm"]
+[ext_resource type="PackedScene" uid="uid://cg1sdom66fo0y" path="res://Cenas/boss.tscn" id="2_21v5w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi2il"]
+size = Vector2(1195, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0hpc"]
+size = Vector2(20, 237)
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_xmksm")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(590.5, 110)
+shape = SubResource("RectangleShape2D_xi2il")
+
+[node name="Boss" parent="." instance=ExtResource("2_21v5w")]
+position = Vector2(366, -17)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1181, -8)
+shape = SubResource("RectangleShape2D_k0hpc")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-20, -5)
+shape = SubResource("RectangleShape2D_k0hpc")
