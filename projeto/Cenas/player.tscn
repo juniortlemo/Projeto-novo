@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dw6k7m0055sym" path="res://Imagens/Sprite Pack 7/1 - Diego/Running (32 x 48).png" id="3_ux73n"]
 [ext_resource type="Texture2D" uid="uid://2lycr5hj65nc" path="res://Imagens/Sprite Pack 7/1 - Diego/Jump (32 x 48).png" id="4_rvrcf"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gx5r"]
+radius = 11.0
+height = 38.0
+
 [sub_resource type="Animation" id="Animation_ahqwr"]
 resource_name = "Idle"
 loop_mode = 1
@@ -221,17 +225,8 @@ _data = {
 "Run": SubResource("Animation_dls1a")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4gx5r"]
-radius = 11.0
-height = 38.0
-
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_2f6g4")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_k7dqj")
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5)
@@ -243,3 +238,8 @@ hframes = 4
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k7dqj")
+}

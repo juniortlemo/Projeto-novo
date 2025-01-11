@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqqkacivim1sy"]
+
+[ext_resource type="Script" path="res://Scripts/light_enemy.gd" id="1_8vxk2"]
+[ext_resource type="Texture2D" uid="uid://b0eri85kg1vda" path="res://Imagens/LightEnemy.png" id="1_i6xno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xydv"]
+size = Vector2(62, 54)
+
+[node name="LightEnemy" type="CharacterBody2D"]
+script = ExtResource("1_8vxk2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.129187, 0.129187)
+texture = ExtResource("1_i6xno")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1xydv")

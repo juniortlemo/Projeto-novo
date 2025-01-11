@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dla24wav6k277"]
+[gd_scene load_steps=9 format=3 uid="uid://dla24wav6k277"]
 
+[ext_resource type="Texture2D" uid="uid://chxvbtd3era40" path="res://Imagens/Background.png" id="1_60qi0"]
+[ext_resource type="Texture2D" uid="uid://jc2yym6ter7i" path="res://Imagens/light.png" id="1_lv7au"]
 [ext_resource type="PackedScene" uid="uid://be5yjkrr3tih4" path="res://Cenas/player.tscn" id="1_xmksm"]
 [ext_resource type="PackedScene" uid="uid://cg1sdom66fo0y" path="res://Cenas/boss.tscn" id="2_21v5w"]
+[ext_resource type="PackedScene" uid="uid://d3ngfb8j4xsj1" path="res://Cenas/dark_enemy.tscn" id="3_i1m74"]
+[ext_resource type="PackedScene" uid="uid://cqqkacivim1sy" path="res://Cenas/light_enemy.tscn" id="4_j87rh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xi2il"]
 size = Vector2(1195, 20)
@@ -11,7 +15,10 @@ size = Vector2(20, 237)
 
 [node name="Main" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_xmksm")]
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(556.31, -14.7693)
+scale = Vector2(0.295027, 0.302539)
+texture = ExtResource("1_lv7au")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -33,3 +40,19 @@ shape = SubResource("RectangleShape2D_k0hpc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(-20, -5)
 shape = SubResource("RectangleShape2D_k0hpc")
+
+[node name="DarkEnemy" parent="." instance=ExtResource("3_i1m74")]
+position = Vector2(183, -62)
+
+[node name="LightEnemy" parent="." instance=ExtResource("4_j87rh")]
+position = Vector2(107, -45)
+
+[node name="Player" parent="." instance=ExtResource("1_xmksm")]
+position = Vector2(0, -7.62939e-06)
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.190762, 0.190762, 0.190762, 0.831373)
+self_modulate = Color(1, 1, 1, 0.45098)
+position = Vector2(436.5, -157.5)
+scale = Vector2(2.6382, 2.70537)
+texture = ExtResource("1_60qi0")
